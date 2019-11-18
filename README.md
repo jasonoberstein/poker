@@ -5,7 +5,7 @@ Project Description: This will be a poker site on which users can create account
 
 
 Rubric (100 points total):
--(5 pts) Rubric is turned in on time
+-(5 pts) Rubric is turned in on time\n
 -(5 pts) Users can create an account and log into website
 -(10 pts) Database tracks username, password, currency, and level
 -(10 pts) Users can join and exit game lobbies with other users
