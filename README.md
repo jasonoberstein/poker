@@ -10,7 +10,8 @@ Rubric (100 points total):
 -(10 pts) Database tracks username, password, currency, and level  
 -(10 pts) Users can join and exit game lobbies with other users  
 -(25 pts) Game executes well  
--(20 pts) Basic AIs can stand in for users during games  
 -(10 pts) Flask  
--(5 pts) Best practices  
+-(3 pts) Well-formatted code  
+-(2 pts) Passes HTML validator  
 -(5 pts) Site is visually appealing, easy to use, and scales well to mobile  
+-(20 pts) Creative portion
