@@ -8,10 +8,14 @@ Rubric (100 points total):
 -(5 pts) Rubric is turned in on time  
 -(10 pts) Users can create an account, login to, and logout of website  
 -(10 pts) Database tracks username, password, currency, and level  
--(10 pts) Users can join and exit game lobbies with other users  
--(25 pts) Game executes well  
+-(10 pts) Users can join and exit game lobbies with other users    
+-(5 pts) Cards are distributed correctly amongst players  
+-(10 pts) Gamed handles turn-based play, each turn consisting of bidding, raising, folding, etc.  
+-(10 pts) Game correctly determines winner and distributes currency appropriately  
 -(10 pts) Flask  
 -(3 pts) Well-formatted code  
 -(2 pts) Passes HTML validator  
 -(5 pts) Site is visually appealing, easy to use, and scales well to mobile  
 -(20 pts) Creative portion
+
+Approved by Bradford Orr
