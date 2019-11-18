@@ -13,4 +13,4 @@ Rubric (100 points total):
 -(20 pts) Basic AIs can stand in for users during games  
 -(10 pts) Flask  
 -(5 pts) Best practices  
--(5 pts) Site is visually appealing and easy to use  
+-(5 pts) Site is visually appealing, easy to use, and scales well to mobile  
