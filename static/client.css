@@ -1,0 +1,156 @@
+* {
+  transition: opacity 1s ease; }
+
+body {
+  font-family: 'Gill Sans', sans-serif;
+  padding-top: 100px; }
+
+.show {
+  display: block !important;
+  opacity: 1 !important;
+  pointer-events: all !important; }
+
+.hide {
+  opacity: 0.5;
+  pointer-events: none; }
+
+.error {
+  height: 30px;
+  font-size: 1.3vw;
+  color: red;
+  text-align: left;
+  opacity: 0; }
+
+.landingPage {
+  text-align: center;
+  display: none;
+  opacity: 0; }
+  .landingPage input[type="submit"] {
+    font-size: 1.3vw; }
+  .landingPage .header {
+    background-color: #c1f064;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6vw;
+    text-align: center;
+    z-index: 10; }
+    .landingPage .header h1 {
+      color: #0f854a;
+      font-size: 5vw;
+      text-shadow: 3px 3px 0 #000;
+      margin: 0;
+      width: 100%;
+      position: relative; }
+  .landingPage form {
+    margin-right: 15vw;
+    padding-left: 2%;
+    text-align: left;
+    width: 32%;
+    position: relative;
+    float: left; }
+    .landingPage form input {
+      position: absolute;
+      right: 0;
+      width: 12vw; }
+      .landingPage form input[type="submit"] {
+        z-index: 10;
+        width: 11vw; }
+
+.pokerPage {
+  display: none;
+  opacity: 0; }
+  .pokerPage .header {
+    background-color: #c1f064;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 9vw;
+    text-align: center;
+    z-index: 10; }
+    .pokerPage .header h1 {
+      color: #0f854a;
+      font-size: 5vw;
+      text-shadow: 3px 3px 0 #000;
+      margin: 0;
+      width: 100%;
+      position: relative; }
+    .pokerPage .header h3 {
+      margin: 0;
+      position: absolute;
+      top: 40%;
+      left: 2%;
+      font-size: 1.5vw; }
+    .pokerPage .header input {
+      position: absolute;
+      width: 10vw;
+      font-size: 1vw; }
+      .pokerPage .header input.logout {
+        left: 2vw;
+        top: 65%; }
+      .pokerPage .header input.play {
+        left: 45%;
+        bottom: 14%; }
+    .pokerPage .header .coins {
+      position: absolute;
+      top: 60%;
+      right: 2%;
+      font-size: 1.5vw; }
+      .pokerPage .header .coins .numCoins {
+        position: relative;
+        left: 5px; }
+    .pokerPage .header .level {
+      position: absolute;
+      top: 25%;
+      right: 2%;
+      font-size: 1.5vw; }
+  .pokerPage .playBox {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    left: 32%;
+    width: 36%;
+    min-width: 305px;
+    height: 240px;
+    background-color: #c1f064;
+    border: solid 1px black; }
+    .pokerPage .playBox .cancel {
+      transform: rotate(45deg);
+      width: 5%;
+      height: 5%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      font-size: 4vw; }
+  .pokerPage .lobby {
+    display: none;
+    opacity: 0; }
+    .pokerPage .lobby .lobbyName {
+      text-align: center; }
+    .pokerPage .lobby .players {
+      position: absolute;
+      left: 1%;
+      top: 10vw;
+      width: 10em;
+      height: 240px;
+      padding-left: 1em;
+      background-color: #c1f064;
+      border: solid 1px black; }
+      .pokerPage .lobby .players ul {
+        list-style-type: none;
+        padding-left: 0; }
+        .pokerPage .lobby .players ul .false {
+          position: relative;
+          left: 5px;
+          font-size: 0.6em;
+          color: grey; }
+        .pokerPage .lobby .players ul .true {
+          position: relative;
+          left: 5px;
+          font-size: 0.6em;
+          color: green; }
+
+/*# sourceMappingURL=client.css.map */

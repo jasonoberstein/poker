@@ -1,0 +1,215 @@
+// Global styles
+
+* {
+    transition: opacity 1s ease;
+}
+
+body {
+    font-family:'Gill Sans', sans-serif;
+    padding-top: 100px;
+}
+
+.show {
+    display: block !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
+
+.hide {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.error {
+    height: 30px;
+    font-size: 1.3vw;
+    color: red;
+    text-align: left;
+    opacity: 0;
+}
+
+
+// Landing Page
+
+.landingPage {
+    text-align: center;
+    display: none;
+    opacity: 0;
+
+    input[type="submit"] {
+        font-size: 1.3vw;
+    }
+
+    .header {
+        background-color: #c1f064;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6vw;
+        text-align: center;
+        z-index: 10;
+
+        h1 {
+            color: #0f854a;
+            font-size: 5vw;
+            text-shadow: 3px 3px 0 #000;
+            margin: 0;
+            width: 100%;
+            position: relative;
+        }
+    }
+
+    form {
+        margin-right: 15vw;
+        padding-left: 2%;
+        text-align: left;
+        width: 32%;
+        position: relative;
+        float: left;
+
+        input {
+            position: absolute;
+            right: 0;
+            width: 12vw;
+
+            &[type="submit"] {
+                z-index: 10;
+                width: 11vw;
+            }
+        }
+    }
+}
+
+
+// Poker Page
+
+.pokerPage {
+    display: none;
+    opacity: 0;
+
+    .header {
+        background-color: #c1f064;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 9vw;
+        text-align: center;
+        z-index: 10;
+
+        h1 {
+            color: #0f854a;
+            font-size: 5vw;
+            text-shadow: 3px 3px 0 #000;
+            margin: 0;
+            width: 100%;
+            position: relative;
+        }
+
+        h3 {
+            margin: 0;
+            position: absolute;
+            top: 40%;
+            left: 2%;
+            font-size: 1.5vw;
+        }
+
+        input {
+            position: absolute;
+            width: 10vw;
+            font-size: 1vw;
+
+            &.logout {
+                left: 2vw;
+                top: 65%;
+            }
+
+            &.play {
+                left: 45%;
+                bottom: 14%;
+            }
+        }
+
+        .coins {
+            position: absolute;
+            top: 60%;
+            right: 2%;
+            font-size: 1.5vw;
+
+            .numCoins {
+                position: relative;
+                left: 5px;
+            }
+        }
+
+        .level {
+            position: absolute;
+            top: 25%;
+            right: 2%;
+            font-size: 1.5vw;
+        }
+    }
+
+    .playBox {
+        opacity: 0;
+        pointer-events: none;
+        position: fixed;
+        left: 32%;
+        width: 36%;
+        min-width: 305px;
+        height: 240px;
+        background-color: #c1f064;
+        border: solid 1px black;
+
+        .cancel {
+            transform: rotate(45deg);
+            width: 5%;
+            height: 5%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            font-size: 4vw;
+        }
+    }
+
+    .lobby {
+        display: none;
+        opacity: 0;
+
+        .lobbyName {
+            text-align: center;
+        }
+
+        .players {
+            position: absolute;
+            left: 1%;
+            top: 10vw;
+            width: 10em;
+            height: 240px;
+            padding-left: 1em;
+            background-color: #c1f064;
+            border: solid 1px black;
+
+            ul {
+                list-style-type: none;
+                padding-left: 0;
+
+                .false {
+                    position: relative;
+                    left: 5px;
+                    font-size: 0.6em;
+                    color: grey;
+                }
+
+                .true {
+                    position: relative;
+                    left: 5px;
+                    font-size: 0.6em;
+                    color: green;
+                }
+            }
+        }
+    }
+}

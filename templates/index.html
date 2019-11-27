@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Poker</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/client.css">
+</head>
+<body>
+
+    <div class="landingPage">
+        <div class="header">
+            <h1>POKER</h1>
+        </div>
+
+        <form class="login">
+            <h4>Login</h4>
+            Username: <input class="username" type="text" autocomplete="off"><br><br>
+            Password: <input class="password" type="password"><br><br>
+            <input type="submit" value="Login">
+            <div class="error"></div>
+        </form>
+
+        <form class="createAccount">
+            <h4>Create Account</h4>
+            Username: <input class="username" type="text" autocomplete="off"><br><br>
+            Password: <input class="password" type="password"><br><br>
+            <input type="submit" value="Create User">
+            <div class="error"></div>
+        </form>
+    </div>
+
+    <div class="pokerPage">
+        <div class="header">
+            <h1>POKER</h1>
+            <h3 class="welcome"></h3>
+            <input class="logout" type="submit" value="Logout">
+            <input class="play" type="submit" value="Play">
+            <div class="coins"><i class="fas fa-coins"></i><span class="numCoins"></span></div>
+            <div class="level">level <span class="numLevel"></span></div>
+        </div>
+
+        <div class="playBox">
+            <div class="cancel">+</div>
+
+            <form class="createLobby">
+                <h1>Create New Game</h1> 
+                <input class="name" type="text" autocomplete="off">
+                <input class="create" type="submit" value="Create">
+                <div class="error"></div>
+            </form>
+
+            <form class="joinLobby">
+                <h1>Join Existing Game</h1> 
+                <input class="name" type="text" autocomplete="off">
+                <input class="join" type="submit" value="Join">
+                <div class="error"></div>
+            </form>
+        </div>
+
+        <div class="lobby">
+            <h1 class="lobbyName"></h1>
+
+            <div class="players">
+                <h3>Player List</h3>
+                <ul></ul>
+            </div>
+
+            <div class="playerCards">
+
+            </div>
+
+            <div class="centerCards">
+
+            </div>
+        </div>
+        
+    </div>
+
+
+    <script src="static/client.js"></script>
+
+</body>
+</html>
