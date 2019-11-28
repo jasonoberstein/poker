@@ -41,7 +41,7 @@ $(".login input[type='submit']").on("click", function() {
     data = {
         username: $(".login .username").val(),
         password: $(".login .password").val()
-    }
+    };
     socketio.emit("login", data);
 });
 socketio.on("login", function(data) {
@@ -123,10 +123,7 @@ function closePlayBox() {
 // Create lobby
 $(".playBox .createLobby .create").on("click", function() {
     event.preventDefault();
-    data = {
-        lobby: $(".playBox .createLobby .name").val()
-    }
-    socketio.emit("create", data)
+    socketio.emit("create", {lobby: $(".playBox .createLobby .name").val()})
 })
 socketio.on("create", function(data) {
     if (!data.success) {
@@ -140,10 +137,7 @@ socketio.on("create", function(data) {
 // Join lobby
 $(".playBox .joinLobby .join").on("click", function() {
     event.preventDefault();
-    data = {
-        lobby: $(".playBox .joinLobby .name").val()
-    }
-    socketio.emit("join", data);
+    socketio.emit("join", {lobby: $(".playBox .joinLobby .name").val()});
 })
 socketio.on("join", function(data) {
     if (!data.success) {
@@ -177,4 +171,51 @@ socketio.on("updateUserList", function(data) {
     }
     $(".players .true").html("ready");
     $(".players .false").html("not ready");
+});
+
+
+///
+// Poker stuff
+///
+
+
+socketio.on("startGame", function(data) {
+    console.log(data);
+});
+
+// Betting
+socketio.on("bet", function() {
+    $(".betBox").addClass("show");
+});
+
+$(".betBox .bet").on("click", function() {
+    event.preventDefault();
+    data = {
+        lobby: currentLobby,
+        amount: $(".betBox .amount").val()
+    };
+    socketio.emit("bet", data);
+});
+socketio.on("betResponse", function(data) {
+    if (!data.success) {
+        if (data.exception) {
+            error("betBox", "connection failed");
+            console.log(data.message);
+        } else {
+            error("betBox", data.message);
+        }
+    } else {
+        $(".betBox").removeClass("show");
+        setTimeout(function() {
+            $(".betBox .amount").val("");
+        }, 1000);
+    }
+});
+
+
+function test() {
+    socketio.emit("test");
+}
+socketio.on("test", function(data) {
+    console.log(data);
 });

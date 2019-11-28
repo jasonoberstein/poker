@@ -211,5 +211,30 @@ body {
                 }
             }
         }
+
+        .playerCards {
+
+        }
+
+        .middleCards {
+
+        }
+
+        .betBox {
+            display: none;
+            opacity: 0;
+            padding: 10px;
+            position: fixed;
+            top: 75%;
+            left: 32%;
+            width: 7%;
+            height: 43px;
+            background-color: #c1f064;
+            border: solid 1px black;
+
+            input {
+                width: 70%;
+            }
+        }
     }
 }
