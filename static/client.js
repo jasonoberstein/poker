@@ -25,9 +25,11 @@ function error(type, message) {
 }
 
 
-///
+//////////
+//////////
 // Login/logout stuff (and level up)
-///
+//////////
+//////////
 
 
 // Create account
@@ -117,9 +119,11 @@ socketio.on("levelUp", function(data) {
 });
 
 
-///
+//////////
+//////////
 // Joining lobbies
-///
+//////////
+//////////
 
 
 // Play box handlers
@@ -222,9 +226,11 @@ socketio.on("updateLevel", function(data) {
 });
 
 
-///
-// Poker stuff
-///
+//////////
+//////////
+// Poker
+//////////
+//////////
 
 
 // Display players and cards
@@ -250,11 +256,13 @@ socketio.on("startGame", function(data) {
     }
 });
 
+// Deal two cards to player
 socketio.on("dealPlayer", function(data) {
     $(".game .user .card1").attr("src", "../static/cards/" + data.card1 + ".png");
     $(".game .user .card2").attr("src", "../static/cards/" + data.card2 + ".png");
 });
 
+// Deal middle cards
 socketio.on("dealMiddle", function(data) {
     $.each(data, function(key, value) {
         $(".game .middleCards .card" + middleCard).attr("src", "../static/cards/" + value + ".png");

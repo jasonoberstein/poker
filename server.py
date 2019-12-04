@@ -15,6 +15,8 @@ app.config["SECRET_KEY"] = "Tejcxf17!!!"
 socketio = SocketIO(app)
 
 
+# Classes
+
 # Cards
 class Card:
     def __init__(self, value, suit):
@@ -93,11 +95,14 @@ def index():
 	return render_template("index.html")
 
 
-###
+##########
+##########
 # Login/logout stuff
-###
+##########
+##########
 
 
+# Create account
 @socketio.on("createAccount")
 def createAccount(data):
     try:
@@ -155,6 +160,7 @@ def createAccount(data):
         }))
     socketio.emit("createAccount", returnData, room = request.sid)
 
+# Login to account
 @socketio.on("login")
 def login(data):
     try:
@@ -208,6 +214,7 @@ def login(data):
         }))
     socketio.emit("login", returnData, room = request.sid)
 
+# Logout of account
 @socketio.on("logout")
 def logout():
     # Leave current lobby
@@ -228,11 +235,14 @@ def logout():
         del clients[request.sid]
 
 
-###
+##########
+##########
 # Joining lobbies
-###
+##########
+##########
 
 
+# Create lobby
 @socketio.on("create")
 def create(data):
     lobby = data["lobby"]
@@ -264,6 +274,7 @@ def create(data):
     
     socketio.emit("create", returnData, room = request.sid)
 
+# Join lobby
 @socketio.on("join")
 def join(data):
     lobby = data["lobby"]
@@ -310,6 +321,7 @@ def join(data):
     
     socketio.emit("join", returnData, room = request.sid)
 
+# Helper function, returns lobby user is in if any
 def getCurrentLobby(sid):
     data = None
     for currentLobby in lobbies:
@@ -343,6 +355,7 @@ def ready(data):
         socketio.emit("startGame", {"users": getUserList(lobby)}, room = lobby)
         startGame(lobby, players)
 
+# Helper function, returns users in lobby
 def getUserList(lobby):
     userList = {}
     for user in lobbies[lobby]:
@@ -353,7 +366,7 @@ def getUserList(lobby):
             userList[clients[user]["username"]] = lobbies[lobby][user]
     return userList
 
-# Leave
+# Leave lobby
 @socketio.on("leave")
 def leave(data):
     lobby = data["lobby"]
@@ -389,9 +402,11 @@ def leave(data):
         socketio.emit("updateUserList", {"users": getUserList(lobby)}, room = lobby)
 
 
-###
+##########
+##########
 # Poker stuff
-###
+##########
+##########
 
 
 # Players is a list of socket ids
@@ -443,6 +458,7 @@ def startGame(lobby, players):
         socketio.emit("bet", {"amount": currentGames[lobby].minBet - currentGames[lobby].playerBets[better]}, room = better)
     return
 
+# Player proposes a bet
 @socketio.on("bet")
 def bet(data):
     lobby = data["lobby"]
@@ -607,6 +623,7 @@ def bet(data):
                 else:
                     finishGame(game, lobby, getWinners(game.playerCards, game.middleCards))
 
+# Given all cards, compare the hands and select the winners
 def getWinners(playerCards, middleCards):
     playerHands = []
 
@@ -667,9 +684,12 @@ def getWinners(playerCards, middleCards):
     return winners
 
 
-###
-# Helper functions for getting winner
-###
+##########
+##########
+# Helper functions
+# for getting winner
+##########
+##########
 
 
 def getBestHand(hand, player):
@@ -963,9 +983,11 @@ def levelUp():
     socketio.emit("levelUp", returnData, request.sid)
 
 
-###
+##########
+##########
 # AI stuff
-###
+##########
+##########
 
 
 # Add an AI to the lobby
@@ -1130,8 +1152,10 @@ def betAI(lobby):
         bet(betData)
 
 
-###
+##########
+##########
 # Run app
-###
+##########
+##########
 if __name__ == "__main__":
     socketio.run(app)
