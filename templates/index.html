@@ -43,21 +43,25 @@
             <input class="logout" type="submit" value="Logout">
             <input class="play" type="submit" value="Play">
             <div class="coins"><i class="fas fa-coins"></i><span class="numCoins"></span></div>
-            <div class="level">level <span class="numLevel"></span></div>
+            <div class="level">
+                <div class="numLevel"></div>
+                <input class="levelUp" type="submit" Value="Level up">
+                <div class="error"></div>
+            </div>
         </div>
 
         <div class="playBox">
             <div class="cancel">+</div>
 
             <form class="createLobby">
-                <h1>Create New Game</h1> 
+                <h1>Create New Lobby</h1> 
                 <input class="name" type="text" autocomplete="off">
                 <input class="create" type="submit" value="Create">
                 <div class="error"></div>
             </form>
 
             <form class="joinLobby">
-                <h1>Join Existing Game</h1> 
+                <h1>Join Existing Lobby</h1> 
                 <input class="name" type="text" autocomplete="off">
                 <input class="join" type="submit" value="Join">
                 <div class="error"></div>
@@ -67,25 +71,101 @@
         <div class="lobby">
             <h1 class="lobbyName"></h1>
 
-            <div class="players">
+            <div class="playerList">
                 <h3>Player List</h3>
                 <ul></ul>
+                <input class="addAI" type="submit" value="Add AI">
+                <input class="kickAI" type="submit" value="Kick AI">
+                <div class="error"></div>
+                <input class="leave" type="submit" value="Leave">
             </div>
 
-            <div class="playerCards">
-
-            </div>
-
-            <div class="middleCards">
-
+            <!-- Player bets and cards -->
+            <div class="game">
+                <div class="pot">
+                    Pot: <span class="amount"></span><i class="fas fa-coins"></i>
+                </div>
+                <div class="middleCards">
+                    <img class="card1" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                    <img class="card2" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                    <img class="card3" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                    <img class="card4" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                    <img class="card5" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                </div>
+                <div class="player1">
+                    <h4></h4>
+                    <div class="bet">Bet: None</div>
+                    <div class="cards">
+                        <img class="card1" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                        <img class="card2" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                    </div>
+                </div>
+                <div class="player2">
+                    <h4></h4>
+                    <div class="bet">Bet: None</div>
+                    <div class="cards">
+                        <img class="card1" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                        <img class="card2" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                    </div>
+                </div>
+                <div class="player3">
+                        <h4></h4>
+                    <div class="bet">Bet: None</div>
+                    <div class="cards">
+                        <img class="card1" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                        <img class="card2" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                    </div>
+                </div>
+                <div class="player4">
+                        <h4></h4>
+                    <div class="bet">Bet: None</div>
+                    <div class="cards">
+                        <img class="card1" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                        <img class="card2" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                    </div>
+                </div>
+                <div class="player5">
+                        <h4></h4>
+                    <div class="bet">Bet: None</div>
+                    <div class="cards">
+                        <img class="card1" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                        <img class="card2" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                    </div>
+                </div>
+                <div class="player6">
+                        <h4></h4>
+                    <div class="bet">Bet: None</div>
+                    <div class="cards">
+                        <img class="card1" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                        <img class="card2" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                    </div>
+                </div>
+                <div class="player7">
+                        <h4></h4>
+                    <div class="bet">Bet: None</div>
+                    <div class="cards">
+                        <img class="card1" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                        <img class="card2" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                    </div>
+                </div>
+                <div class="player8">
+                        <h4></h4>
+                    <div class="bet">Bet: None</div>
+                    <div class="cards">
+                        <img class="card1" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                        <img class="card2" height="60" width="42" src="../static/cards/blank_card.jpg" alt="card">
+                    </div>
+                </div>
             </div>
 
             <div class="betBox">
+                <div class="minBet"></div>
                 <form>
                     <input class="amount" type="number" min="0" value="0">
                     <input class="bet" type="submit" value="Bet">
                     <div class="error"></div>
                 </form>
+                <input class="fold" type="submit" value="Fold">
             </div>
         </div>
         

@@ -95,7 +95,7 @@ body {
         bottom: 14%; }
     .pokerPage .header .coins {
       position: absolute;
-      top: 60%;
+      top: 64%;
       right: 2%;
       font-size: 1.5vw; }
       .pokerPage .header .coins .numCoins {
@@ -103,9 +103,15 @@ body {
         left: 5px; }
     .pokerPage .header .level {
       position: absolute;
-      top: 25%;
+      top: 13%;
       right: 2%;
       font-size: 1.5vw; }
+      .pokerPage .header .level .levelUp {
+        position: initial; }
+      .pokerPage .header .level .error {
+        position: absolute;
+        left: -8.5vw;
+        top: 4%; }
   .pokerPage .playBox {
     opacity: 0;
     pointer-events: none;
@@ -113,9 +119,11 @@ body {
     left: 32%;
     width: 36%;
     min-width: 305px;
-    height: 240px;
+    height: 260px;
     background-color: #c1f064;
-    border: solid 1px black; }
+    border: solid 1px black;
+    z-index: 10;
+    padding-left: 10px; }
     .pokerPage .playBox .cancel {
       transform: rotate(45deg);
       width: 5%;
@@ -125,45 +133,128 @@ body {
       right: 0;
       cursor: pointer;
       font-size: 4vw; }
+    .pokerPage .playBox .joinLobby .error {
+      position: relative;
+      top: 5px; }
   .pokerPage .lobby {
     display: none;
-    opacity: 0; }
+    opacity: 0;
+    position: relative;
+    height: 400px; }
     .pokerPage .lobby .lobbyName {
       text-align: center; }
-    .pokerPage .lobby .players {
+    .pokerPage .lobby .playerList {
       position: absolute;
       left: 1%;
-      top: 10vw;
+      top: 0;
       width: 10em;
-      height: 240px;
+      height: 300px;
       padding-left: 1em;
       background-color: #c1f064;
       border: solid 1px black; }
-      .pokerPage .lobby .players ul {
+      .pokerPage .lobby .playerList ul {
         list-style-type: none;
         padding-left: 0; }
-        .pokerPage .lobby .players ul .false {
+        .pokerPage .lobby .playerList ul .false {
           position: relative;
           left: 5px;
           font-size: 0.6em;
           color: grey; }
-        .pokerPage .lobby .players ul .true {
+        .pokerPage .lobby .playerList ul .true {
           position: relative;
           left: 5px;
           font-size: 0.6em;
           color: green; }
+      .pokerPage .lobby .playerList .addAI {
+        position: absolute;
+        bottom: 32px;
+        left: 30px; }
+      .pokerPage .lobby .playerList .kickAI {
+        position: absolute;
+        bottom: 32px;
+        left: 90px; }
+      .pokerPage .lobby .playerList .leave {
+        position: absolute;
+        bottom: 12px;
+        left: 60px; }
+      .pokerPage .lobby .playerList .error {
+        position: absolute;
+        bottom: 50px; }
+    .pokerPage .lobby .game {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: calc(4% + 10em);
+      width: 100%; }
+      .pokerPage .lobby .game .pot {
+        position: absolute;
+        left: 31%;
+        top: 57px; }
+        .pokerPage .lobby .game .pot i {
+          position: relative;
+          left: 5px; }
+      .pokerPage .lobby .game .middleCards {
+        position: absolute;
+        left: 25%;
+        top: 250px; }
+      .pokerPage .lobby .game h4 {
+        margin: 0; }
+      .pokerPage .lobby .game .bet {
+        margin-bottom: 0.5em;
+        margin-top: 0.5em; }
+      .pokerPage .lobby .game .player1 {
+        position: absolute;
+        left: 18%;
+        top: 70px; }
+      .pokerPage .lobby .game .player2 {
+        position: absolute;
+        left: 44%;
+        top: 70px; }
+      .pokerPage .lobby .game .player3 {
+        position: absolute;
+        left: 7%;
+        top: 190px; }
+      .pokerPage .lobby .game .player4 {
+        position: absolute;
+        left: 56%;
+        top: 190px; }
+      .pokerPage .lobby .game .player5 {
+        position: absolute;
+        left: 7%;
+        top: 330px; }
+      .pokerPage .lobby .game .player6 {
+        position: absolute;
+        left: 56%;
+        top: 330px; }
+      .pokerPage .lobby .game .player7 {
+        position: absolute;
+        left: 18%;
+        top: 450px; }
+      .pokerPage .lobby .game .player8 {
+        position: absolute;
+        left: 45%;
+        top: 450px; }
+      .pokerPage .lobby .game > div:not(.middleCards):not(.pot) {
+        opacity: 0; }
+      .pokerPage .lobby .game .folded h4 {
+        text-decoration: line-through; }
+      .pokerPage .lobby .game .winner h4 {
+        color: orange; }
     .pokerPage .lobby .betBox {
       display: none;
       opacity: 0;
       padding: 10px;
-      position: fixed;
-      top: 75%;
-      left: 32%;
-      width: 7%;
-      height: 43px;
+      position: absolute;
+      top: 83%;
+      left: 45%;
+      width: 130px;
+      height: 100px;
       background-color: #c1f064;
       border: solid 1px black; }
       .pokerPage .lobby .betBox input {
         width: 70%; }
+      .pokerPage .lobby .betBox .fold {
+        position: absolute;
+        top: 75%; }
 
 /*# sourceMappingURL=client.css.map */

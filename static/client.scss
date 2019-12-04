@@ -133,7 +133,7 @@ body {
 
         .coins {
             position: absolute;
-            top: 60%;
+            top: 64%;
             right: 2%;
             font-size: 1.5vw;
 
@@ -145,9 +145,19 @@ body {
 
         .level {
             position: absolute;
-            top: 25%;
+            top: 13%;
             right: 2%;
             font-size: 1.5vw;
+
+            .levelUp {
+                position: initial;
+            }
+
+            .error {
+                position: absolute;
+                left: -8.5vw;
+                top: 4%;
+            }
         }
     }
 
@@ -158,9 +168,11 @@ body {
         left: 32%;
         width: 36%;
         min-width: 305px;
-        height: 240px;
+        height: 260px;
         background-color: #c1f064;
         border: solid 1px black;
+        z-index: 10;
+        padding-left: 10px;
 
         .cancel {
             transform: rotate(45deg);
@@ -172,22 +184,29 @@ body {
             cursor: pointer;
             font-size: 4vw;
         }
+
+        .joinLobby .error {
+            position: relative;
+            top: 5px;
+        }
     }
 
     .lobby {
         display: none;
         opacity: 0;
+        position: relative;
+        height: 400px;
 
         .lobbyName {
             text-align: center;
         }
 
-        .players {
+        .playerList {
             position: absolute;
             left: 1%;
-            top: 10vw;
+            top: 0;
             width: 10em;
-            height: 240px;
+            height: 300px;
             padding-left: 1em;
             background-color: #c1f064;
             border: solid 1px black;
@@ -210,30 +229,148 @@ body {
                     color: green;
                 }
             }
+
+            .addAI {
+                position: absolute;
+                bottom: 32px;
+                left: 30px;
+            }
+
+            .kickAI {
+                position: absolute;
+                bottom: 32px;
+                left: 90px;
+            }
+
+            .leave {
+                position: absolute;
+                bottom: 12px;
+                left: 60px;
+            }
+
+            .error {
+                position: absolute;
+                bottom: 50px;
+            }
         }
 
-        .playerCards {
+        .game {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: calc(4% + 10em);
+            width: 100%;
 
-        }
+            .pot {
+                position: absolute;
+                left: 31%;
+                top: 57px;
 
-        .middleCards {
+                i {
+                    position: relative;
+                    left: 5px;
+                }
+            }
+    
+            .middleCards {
+                position: absolute;
+                left: 25%;
+                top: 250px;
+            }
 
+            h4 {
+                margin: 0
+            }
+
+            .bet {
+                margin-bottom: 0.5em;
+                margin-top: 0.5em;
+            }
+
+            .player1 {
+                position: absolute;
+                left: 18%;
+                top: 70px;
+            }
+
+            .player2 {
+                position: absolute;
+                left: 44%;
+                top: 70px;
+            }
+
+            .player3 {
+                position: absolute;
+                left: 7%;
+                top: 190px;
+            }
+
+            .player4 {
+                position: absolute;
+                left: 56%;
+                top: 190px;
+            }
+
+            .player5 {
+                position: absolute;
+                left: 7%;
+                top: 330px;
+            }
+
+            .player6 {
+                position: absolute;
+                left: 56%;
+                top: 330px;
+            }
+
+            .player7 {
+                position: absolute;
+                left: 18%;
+                top: 450px;
+            }
+
+            .player8 {
+                position: absolute;
+                left: 45%;
+                top: 450px;
+            }
+
+            > div:not(.middleCards):not(.pot) {
+                opacity: 0;
+            }
+
+            .folded {
+                h4 {
+                    text-decoration: line-through;
+                }
+            }
+
+            .winner {
+                h4 {
+                    color: orange;
+                }
+            }
         }
 
         .betBox {
             display: none;
             opacity: 0;
             padding: 10px;
-            position: fixed;
-            top: 75%;
-            left: 32%;
-            width: 7%;
-            height: 43px;
+            position: absolute;
+            top: 83%;
+            left: 45%;
+            width: 130px;
+            height: 100px;
             background-color: #c1f064;
             border: solid 1px black;
 
             input {
                 width: 70%;
+            }
+
+            .fold {
+                position: absolute;
+                top: 75%;
             }
         }
     }
