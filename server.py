@@ -692,6 +692,7 @@ def getWinners(playerCards, middleCards):
 ##########
 
 
+# Analyzes one hand
 def getBestHand(hand, player):
     bestHand = Hand(player)
     hand.sort(reverse = True, key = lambda card: card.value)
