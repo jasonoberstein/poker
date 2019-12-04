@@ -119,7 +119,7 @@ def createAccount(data):
                 }))
             else:
                 # Create user
-                c.execute("INSERT INTO users (username, password, coins, level) VALUES (%s, %s, %s, %s)", (data["username"], sha256_crypt.encrypt(data["password"]), startingCoins, startingLevel))
+                c.execute("INSERT INTO users (username, password, coins, level) VALUES (%s, %s, %s, %s)", (data["username"], sha256_crypt.hash(data["password"]), startingCoins, startingLevel))
                 conn.commit()
 
                 # Need this query to get id of user
@@ -1040,7 +1040,6 @@ def betAI(lobby):
     bluffAdjust = 0
     if game.bluff:
         bluffAdjust = 0.2
-    print(bluffAdjust)
 
     if game.middleCards == None:
         # Bet based on two cards
@@ -1091,8 +1090,6 @@ def betAI(lobby):
     
     # Is the hand terrible?
     badHand = True if bestHand.type == 1 and game.playerCards["AI"][0].value + game.playerCards["AI"][1].value < 10 else False
-    print(badHand)
-    print(bestHand.type)
 
     tooRich = False
     idealBet = targetBet - game.playerBets["AI"]
@@ -1108,13 +1105,11 @@ def betAI(lobby):
 
         # Normalized difference in bets
         diff = (game.minBet - targetBet) / maxBet
-        print(diff)
         rand = random.randint(0,100)
         if diff < 0.4 or rand <= stubbornness and not badHand:
             # Stay in
             finalBet = game.minBet - game.playerBets["AI"]
         else:
-            print(rand)
             # Fold
             finalBet = None
             tooRich = True
@@ -1133,11 +1128,6 @@ def betAI(lobby):
             "amount": finalBet
         }))
         bet(betData)
-
-@socketio.on("test")
-def test():
-    socketio.emit("test", {"id": request.sid, "lobbies": lobbies, "currentGames": currentGames, "clients": clients}, room = request.sid)
-    return
 
 
 ###

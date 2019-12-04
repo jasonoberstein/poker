@@ -168,11 +168,12 @@ body {
         left: 32%;
         width: 36%;
         min-width: 305px;
-        height: 260px;
+        height: 240px;
         background-color: #c1f064;
         border: solid 1px black;
         z-index: 10;
         padding-left: 10px;
+        text-align: center;
 
         .cancel {
             transform: rotate(45deg);
@@ -185,9 +186,10 @@ body {
             font-size: 4vw;
         }
 
-        .joinLobby .error {
+        .error {
+            text-align: center;
             position: relative;
-            top: 5px;
+            top: 15px;
         }
     }
 
@@ -254,6 +256,7 @@ body {
             }
         }
 
+        // Mostly positioning of cards
         .game {
             opacity: 0;
             position: absolute;
@@ -342,6 +345,7 @@ body {
             .folded {
                 h4 {
                     text-decoration: line-through;
+                    color: grey;
                 }
             }
 

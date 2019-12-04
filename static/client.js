@@ -366,11 +366,3 @@ socketio.on("aiResponse", function(data) {
         error("playerList", data.message);
     }
 });
-
-
-function test() {
-    socketio.emit("test");
-}
-socketio.on("test", function(data) {
-    console.log(data);
-});

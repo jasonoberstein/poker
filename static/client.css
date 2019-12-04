@@ -119,11 +119,12 @@ body {
     left: 32%;
     width: 36%;
     min-width: 305px;
-    height: 260px;
+    height: 240px;
     background-color: #c1f064;
     border: solid 1px black;
     z-index: 10;
-    padding-left: 10px; }
+    padding-left: 10px;
+    text-align: center; }
     .pokerPage .playBox .cancel {
       transform: rotate(45deg);
       width: 5%;
@@ -133,9 +134,10 @@ body {
       right: 0;
       cursor: pointer;
       font-size: 4vw; }
-    .pokerPage .playBox .joinLobby .error {
+    .pokerPage .playBox .error {
+      text-align: center;
       position: relative;
-      top: 5px; }
+      top: 15px; }
   .pokerPage .lobby {
     display: none;
     opacity: 0;
@@ -237,7 +239,8 @@ body {
       .pokerPage .lobby .game > div:not(.middleCards):not(.pot) {
         opacity: 0; }
       .pokerPage .lobby .game .folded h4 {
-        text-decoration: line-through; }
+        text-decoration: line-through;
+        color: grey; }
       .pokerPage .lobby .game .winner h4 {
         color: orange; }
     .pokerPage .lobby .betBox {
